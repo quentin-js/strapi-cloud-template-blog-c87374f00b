@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "customers",
+  "info": {
+    "singularName": "customer",
+    "pluralName": "customers",
+    "displayName": "Customer",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Company": {
+      "type": "string"
+    },
+    "ticket_forms": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::ticket-form.ticket-form",
+      "mappedBy": "customer"
+    },
+    "User": {
+      "type": "component",
+      "repeatable": true,
+      "component": "customer.user"
+    }
+  }
+}

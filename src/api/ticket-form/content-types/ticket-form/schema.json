@@ -1,0 +1,68 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ticket_forms",
+  "info": {
+    "singularName": "ticket-form",
+    "pluralName": "ticket-forms",
+    "displayName": "Ticket Form",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "TicketID": {
+      "type": "uid"
+    },
+    "MessageType": {
+      "type": "enumeration",
+      "enum": [
+        "Question",
+        "Feedback",
+        "Bug"
+      ]
+    },
+    "customer": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::customer.customer",
+      "inversedBy": "ticket_forms"
+    },
+    "SeverityLevel": {
+      "type": "enumeration",
+      "enum": [
+        "P1",
+        "P2",
+        "P3",
+        "P4"
+      ]
+    },
+    "Description": {
+      "type": "richtext"
+    },
+    "ErrorLog": {
+      "type": "json"
+    },
+    "UploadImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "CustomerBackend": {
+      "displayName": "CustomerBackend",
+      "type": "component",
+      "repeatable": true,
+      "component": "customer.customer-backend"
+    }
+  }
+}

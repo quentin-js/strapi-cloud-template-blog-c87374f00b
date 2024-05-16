@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_customer_users",
+  "info": {
+    "displayName": "User",
+    "icon": "alien"
+  },
+  "options": {},
+  "attributes": {
+    "FirstName": {
+      "type": "string"
+    },
+    "LastName": {
+      "type": "string"
+    },
+    "UserEmail": {
+      "type": "email"
+    }
+  }
+}

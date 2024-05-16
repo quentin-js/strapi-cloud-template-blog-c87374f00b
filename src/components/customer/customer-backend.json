@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_customer_customer_backends",
+  "info": {
+    "displayName": "CustomerBackend",
+    "icon": "dashboard"
+  },
+  "options": {},
+  "attributes": {
+    "IsACustomer": {
+      "type": "boolean"
+    },
+    "HubspotURL": {
+      "type": "string"
+    },
+    "LagoURL": {
+      "type": "string"
+    },
+    "LicenseURL": {
+      "type": "string"
+    }
+  }
+}

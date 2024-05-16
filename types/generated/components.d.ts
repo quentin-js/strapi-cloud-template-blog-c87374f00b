@@ -1,5 +1,32 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface CustomerCustomerBackend extends Schema.Component {
+  collectionName: 'components_customer_customer_backends';
+  info: {
+    displayName: 'CustomerBackend';
+    icon: 'dashboard';
+  };
+  attributes: {
+    IsACustomer: Attribute.Boolean;
+    HubspotURL: Attribute.String;
+    LagoURL: Attribute.String;
+    LicenseURL: Attribute.String;
+  };
+}
+
+export interface CustomerUser extends Schema.Component {
+  collectionName: 'components_customer_users';
+  info: {
+    displayName: 'User';
+    icon: 'alien';
+  };
+  attributes: {
+    FirstName: Attribute.String;
+    LastName: Attribute.String;
+    UserEmail: Attribute.Email;
+  };
+}
+
 export interface SharedMedia extends Schema.Component {
   collectionName: 'components_shared_media';
   info: {
@@ -65,6 +92,8 @@ export interface SharedSlider extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'customer.customer-backend': CustomerCustomerBackend;
+      'customer.user': CustomerUser;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
